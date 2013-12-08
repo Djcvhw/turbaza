@@ -1,0 +1,27 @@
+<h1>Listing camps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Camp</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @camps.each do |camp| %>
+      <tr>
+        <td><%= camp.name %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Camp', new_camp_path %>

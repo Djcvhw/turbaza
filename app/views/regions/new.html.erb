@@ -1,0 +1,16 @@
+<h1>New region</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'New Region', new_region_path %>
+<br>
+<% @regions.each do |region| %>
+      <div>
+        <%= region.name %><br>
+        <%= link_to 'Show', region %>
+        <%= link_to 'Edit', edit_region_path(region) %>
+        <%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+<br>
+<%= link_to 'Back', regions_path %>

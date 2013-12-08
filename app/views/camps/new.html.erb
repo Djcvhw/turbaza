@@ -1,0 +1,16 @@
+<h1>New camp</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'New Region', new_camp_path %>
+<br>
+<% @camps.each do |camp| %>
+      <div>
+        <%= camp.name %><br>
+        <%= link_to 'Show', camp %>
+        <%= link_to 'Edit', edit_camp_path(camp) %>
+        <%= link_to 'Destroy', camp, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+<br>
+<%= link_to 'Back', camps_path %>

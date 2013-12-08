@@ -1,0 +1,16 @@
+<h1>New country</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'New Country', new_country_path %>
+<br>
+<% @countries.each do |country| %>
+      <div>
+        <%= country.name %><br>
+        <%= link_to 'Show', country %>
+        <%= link_to 'Edit', edit_country_path(country) %>
+        <%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+<br>
+<%= link_to 'Back', countries_path %>
