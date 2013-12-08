@@ -8,17 +8,19 @@
       <th></th>
     </tr>
   </thead>
-
-  <tbody>
+  <div class="select">
+    <%= select_tag(:country_id, options_from_collection_for_select(Country.all, :id, :name)) %>
+    <%= select_tag(:region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
+    <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :name)) %>    
+  </div>
+  
     <% @camps.each do |camp| %>
-      <tr>
-        <td><%= camp.name %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+      <div class="camps">
+        <%= camp.name %><br>
+        <%= camp.description%><br>
+      </div>
     <% end %>
-  </tbody>
+  
 </table>
 
 

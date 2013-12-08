@@ -15,6 +15,7 @@ class CitiesController < ApplicationController
     @countries = Country.all
     @region = Region.all
     @cities = City.find(params[:id])
+    @camps = @city.camps.paginate(page: params[:page])
   end
 
   # GET /countries/new

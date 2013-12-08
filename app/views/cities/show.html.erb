@@ -4,3 +4,10 @@
   <strong>Name:</strong>
   <%= @city.name %>
 </p>
+<% if @city.camps.any? %>
+      
+      <ol class="camps">
+        <%= render @camps%>
+      </ol>
+      <%= will_paginate @camps %>
+    <% end %>

@@ -4,6 +4,13 @@ Tur::Application.routes.draw do
   resources :cities
   resources :camps
 
+  root to: 'camps#index'
+
+  match '/admin',     to: 'camps#new',     via: 'get'
+  match '/country',   to: 'countries#new', via: 'get'
+  match '/region',    to: 'regions#new',   via: 'get'
+  match '/city',      to: 'cities#new',    via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -13,6 +13,7 @@ class RegionsController < ApplicationController
   def show
     @countries = Country.all
     @region = Region.find(params[:id])
+    @cities = @region.cities.paginate(page: params[:page])
   end
 
   # GET /countries/new
