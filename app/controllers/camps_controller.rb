@@ -7,7 +7,8 @@ class CampsController < ApplicationController
     @countries = Country.all
     @regions = Region.all
     @cities = City.all
-    @camps = Camp.all
+    
+    @camps = Camp.paginate(page: params[:page])
   end
 
   # GET /countries/1
@@ -17,14 +18,14 @@ class CampsController < ApplicationController
     @region = Region.all
     @cities = City.all
     @camps = Camp.find(params[:id])
-    @camps = @city.camps.paginate(page: params[:page])
+
   end
 
   # GET /countries/new
   def new
-    @cities = City.all
+    @camp = Camp.new
     @camps = Camp.all
-    @camp = Camp.new    
+    @cities = City.all    
     @regions = Region.all
     @countries = Country.all
   end

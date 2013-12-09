@@ -11,7 +11,7 @@ end
 
 def make_countries
   
-  40.times do |n|
+  2.times do |n|
     name  = Faker::Address.country    
     Country.create!(name:  name)
   end
@@ -19,7 +19,7 @@ end
 
 def make_regions
   countries = Country.all
-  10.times do |n|
+  2.times do |n|
     name  = Faker::Address.state    
     countries.each { |country| country.regions.create!(name: name) }
   end
@@ -35,7 +35,7 @@ end
 
 def make_camps
   cities = City.all
-  5.times do |n|
+  2.times do |n|
     name  = Faker::Company.name 
     description = Faker::Lorem.sentence(5)   
     cities.each { |city| city.camps.create!(name: name, description: description) }

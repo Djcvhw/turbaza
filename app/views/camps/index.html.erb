@@ -1,13 +1,6 @@
-<h1>Listing camps</h1>
+<h1>Турбазы</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Camp</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+
   <div class="select">
     <%= select_tag(:country_id, options_from_collection_for_select(Country.all, :id, :name)) %>
     <%= select_tag(:region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
@@ -20,10 +13,7 @@
         <%= camp.description%><br>
       </div>
     <% end %>
-  
-</table>
-
-
+  <%= will_paginate @camps %>
 <br>
 
-<%= link_to 'New Camp', new_camp_path %>
+
