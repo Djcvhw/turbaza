@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209082543) do
+ActiveRecord::Schema.define(version: 20131208181039) do
 
   create_table "camps", force: true do |t|
     t.string   "name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20131209082543) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description"
+    t.integer  "region_id"
+    t.integer  "country_id"
   end
 
   add_index "camps", ["city_id"], name: "index_camps_on_city_id"
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(version: 20131209082543) do
     t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "country_id"
   end
 
   add_index "cities", ["region_id"], name: "index_cities_on_region_id"
