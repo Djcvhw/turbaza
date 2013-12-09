@@ -11,12 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131208181039) do
+ActiveRecord::Schema.define(version: 20131209082543) do
 
   create_table "camps", force: true do |t|
     t.string   "name"
-    t.integer  "country_id"
-    t.integer  "region_id"
     t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,7 +25,6 @@ ActiveRecord::Schema.define(version: 20131208181039) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
-    t.integer  "country_id"
     t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
