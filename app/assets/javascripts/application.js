@@ -14,6 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$ ->
-  $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable()
