@@ -1,27 +1,7 @@
-<h1>Listing cities</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>City</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>Все города</h1>
     <% @cities.each do |city| %>
-      <tr>
-        <td><%= city.name %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
+      <%= city.name %><br>
+    <% end %> 
 <br>
 
-<%= link_to 'New City', new_city_path %>
+<%= link_to 'Новый город', new_city_path %>

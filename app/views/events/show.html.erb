@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Турбаза:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Страна:</strong>
+  <%= @event.country.name %>
+</p>
+
+<p>
+  <strong>Регион:</strong>
+  <%= @event.region.name %>
+</p>
+
+<p>
+  <strong>Город:</strong>
+  <%= @event.city.name %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

@@ -2,14 +2,19 @@ Tur::Application.routes.draw do
   resources :countries
   resources :regions
   resources :cities
-  resources :camps
+  resources :events
 
-  root to: 'camps#index'
+  root to: 'events#index'
 
-  match '/admin',     to: 'camps#new',     via: 'get'
+  match '/admin',     to: 'events#new',     via: 'get'
   match '/country',   to: 'countries#new', via: 'get'
   match '/region',    to: 'regions#new',   via: 'get'
   match '/city',      to: 'cities#new',    via: 'get'
+
+  namespace :dynamic_select do
+    get ':country_id/regions', to: 'regions#index', as: 'regions'
+    get ':region_id/cities', to: 'cities#index', as: 'cities'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

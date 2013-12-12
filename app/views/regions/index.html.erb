@@ -1,27 +1,7 @@
-<h1>Listing regions</h1>
-
-<table>
-  <thead>
-    <tr>      
-      <th>Region</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>Все регионы</h1>  
     <% @regions.each do |region| %>
-      <tr>
-        <td><%= region.name %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+      <%= region.name %><br>        
     <% end %>
-  </tbody>
-</table>
-
-
 <br>
 
-<%= link_to 'New Region', new_region_path %>
+<%= link_to 'Новый регион', new_region_path %>

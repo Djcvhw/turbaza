@@ -1,15 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Регион:</strong>
   <%= @region.name %>
 </p>
-<% if @region.cities.any? %>
-      
-      <ol class="cities">
-        <%= render @cities%>
-      </ol>
-      <%= will_paginate @cities %>
-    <% end %>
 
-<%= link_to 'Back', regions_path %>
+
+<%= link_to 'Back', "/regions/new" %>

@@ -1,17 +1,19 @@
 <%= render 'layouts/admin' %>
-<h1>New city</h1>
+<h1>Новый город</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'New City', new_city_path %>
+<%= link_to 'Новый город', new_city_path %>
 <br>
 <% @cities.each do |city| %>
-      <div>
-        <%= city.name %><br>
-        <%= link_to 'Show', city %>
-        <%= link_to 'Edit', edit_city_path(city) %>
-        <%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="panel panel-default">
+  		<div class="panel-heading">      		    
+	    <h4 class="panel-title">Город:&nbsp;<%= city.name %></h4>
+        <div class="panel-body">
+			<%= link_to 'Show', city %>
+	        <%= link_to 'Edit', edit_city_path(city) %>
+	        <%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+		</div>        
       </div>
     <% end %>
-<br>
-<%= link_to 'Back', cities_path %>

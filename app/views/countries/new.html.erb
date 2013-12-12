@@ -1,17 +1,21 @@
 <%= render 'layouts/admin' %>
-<h1>New country</h1>
+<h1>Новая страна</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'New Country', new_country_path %>
+<%= link_to 'Новая страна', new_country_path %>
 <br>
-<% @countries.each do |country| %>
-      <div>
-        <%= country.name %><br>
-        <%= link_to 'Show', country %>
-        <%= link_to 'Edit', edit_country_path(country) %>
-        <%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% @countries.each do |country| %>      
+      <div class="panel panel-default">
+  		<div class="panel-heading">      		    
+	    <h4 class="panel-title">Страна:&nbsp;<%= country.name %></h4>
+        <div class="panel-body">
+	        <%= link_to 'Show', country %>
+	        <%= link_to 'Edit', edit_country_path(country) %>
+	        <%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+		</div>        
       </div>
     <% end %>
 <br>
-<%= link_to 'Back', countries_path %>
+<%= link_to 'Back', "/countries/new" %>

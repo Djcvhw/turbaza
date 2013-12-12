@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Город:</strong>
   <%= @city.name %>
 </p>
-<% if @city.camps.any? %>
-      
-      <ol class="camps">
-        <%= render @camps%>
-      </ol>
-      <%= will_paginate @camps %>
-    <% end %>
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', "/cities/new" %>

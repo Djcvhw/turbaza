@@ -1,17 +1,19 @@
 <%= render 'layouts/admin' %>
-<h1>New region</h1>
+<h1>Новый регион</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'New Region', new_region_path %>
+<%= link_to 'Новый регион', new_region_path %>
 <br>
 <% @regions.each do |region| %>
-      <div>
-        <%= region.name %><br>
+      <div class="panel panel-default">
+  		<div class="panel-heading">      		    
+	    <h4 class="panel-title">Регион:&nbsp;<%= region.name %></h4>
+        <div class="panel-body">
         <%= link_to 'Show', region %>
         <%= link_to 'Edit', edit_region_path(region) %>
         <%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+		</div>        
       </div>
-    <% end %>
-<br>
-<%= link_to 'Back', regions_path %>
+          <% end %>

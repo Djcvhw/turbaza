@@ -1,0 +1,21 @@
+<h1>Все турбазы</h1>
+  
+      <% @events.each do |event| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title"><%= event.name %></h2><br>
+    <h4 class="panel-title">Страна:&nbsp;<%= event.country.name %></h4><br>
+    <h4 class="panel-title">Регион:&nbsp;<%= event.region.name %></h4><br>
+    <h4 class="panel-title">Город:&nbsp;<%= event.city.name %></h4>
+  </div>
+  <div class="panel-body">
+    <%= event.description %>
+  </div>
+</div>
+<% end %>
+      
+  <%= will_paginate @events %>
+
+<br>
+
+

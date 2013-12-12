@@ -11,20 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131208181039) do
+ActiveRecord::Schema.define(version: 20131211160752) do
 
-  create_table "camps", force: true do |t|
-    t.string   "name"
-    t.integer  "city_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "description"
-    t.integer  "region_id"
-    t.integer  "country_id"
-  end
-
-  add_index "camps", ["city_id"], name: "index_camps_on_city_id"
-
+  
   create_table "cities", force: true do |t|
     t.string   "name"
     t.integer  "region_id"
@@ -39,6 +28,15 @@ ActiveRecord::Schema.define(version: 20131208181039) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string  "name"
+    t.integer "country_id"
+    t.integer "region_id"
+    t.integer "city_id"
+    t.integer "camp_id"
+    t.string  "description"
   end
 
   create_table "regions", force: true do |t|

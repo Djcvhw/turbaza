@@ -1,28 +1,13 @@
-<h1>Listing countries</h1>
+<h1>Все страны</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Country</th>
-      <th>Region</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @countries.each do |country| %>
-      <tr>
-        <td><%= country.name %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+      <%= country.name %><br>
+       
     <% end %>
-  </tbody>
-</table>
+ 
 
 
 <br>
 
-<%= link_to 'New Country', new_country_path %>
+<%= link_to 'Новая страна', new_country_path %>
