@@ -1,13 +1,6 @@
 <h1>Все страны</h1>
-
-
     <% @countries.each do |country| %>
-      <%= country.name %><br>
-       
+      <%= country.name %><br>       
     <% end %>
- 
-
-
 <br>
-
 <%= link_to 'Новая страна', new_country_path %>

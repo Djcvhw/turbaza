@@ -4,7 +4,7 @@ namespace :db do
     make_countries
     make_regions
     make_cities
-    make_camps
+    make_events
     
   end
 end
@@ -26,19 +26,26 @@ def make_regions
 end
 
 def make_cities
+  countries = Country.all
   regions = Region.all
   5.times do |n|
-    name  = Faker::Address.city    
-    regions.each { |region| region.cities.create!(name: name) }
+    name  = Faker::Address.city
+    country = n+1    
+    regions.each { |region| region.cities.create!(name: name, country_id: country) }
   end
 end
 
-def make_camps
+def make_events
+  countries = Country.all
+  regions = Region.all
   cities = City.all
   2.times do |n|
     name  = Faker::Company.name 
-    description = Faker::Lorem.sentence(5)   
-    cities.each { |city| city.camps.create!(name: name, description: description) }
+    country = n+1
+    region = n+1
+    description = Faker::Lorem.sentence(25)   
+    cities.each { |city| city.events.create!(name: name, description: description, 
+                                              country_id: country, region_id: region) }
   end
 end
 

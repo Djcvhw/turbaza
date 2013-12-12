@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20131211160752) do
     t.integer "country_id"
     t.integer "region_id"
     t.integer "city_id"
-    t.integer "camp_id"
     t.string  "description"
   end
 
